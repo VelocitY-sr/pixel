@@ -37,7 +37,10 @@ for (const file of commandFiles) {
 client.on("message", async (message) => {
   if (message.author.bot) return;
   if (!message.guild) return;
-
+  if(message.content === `${PREFIX}ping`){
+    const ping = client.ws.ping;
+    message.channel.send(`My latency : \`${ping}\``);
+  }
   const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(PREFIX)})\\s*`);
   if (!prefixRegex.test(message.content)) return;
 
