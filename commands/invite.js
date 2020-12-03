@@ -4,7 +4,8 @@ module.exports = {
   execute(message) {
     return message.member
       .send(
-        `https://discord.com/oauth2/authorize?client_id=${message.client.user.id}&permissions=70282305&scope=bot
+        `Thanks for inviting the bot
+https://discord.com/api/oauth2/authorize?client_id=770339643732131873&permissions=37088320&scope=bot
     `
       )
       .catch(console.error);
